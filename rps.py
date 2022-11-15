@@ -10,12 +10,15 @@ wonMatch = {
 }
 
 while not player:
+    
     player = input("Rock, Paper, or Scissors?\n").lower()
+    
     #check for valid entry
     while player not in plays:
         player = False
         print("Invalid entry. Try again")
         player = input("Rock, Paper, or Scissors?\n").lower()
+    
     #check for tie and use wonMatch dict if winner
     if player == computer:
         print("Tie!")
@@ -23,8 +26,11 @@ while not player:
         print("You Win!") 
     else:
         print("You lose!")
+    
     #option to loop through and play again
     playAgain = input("Play again? y/n: ")
     if playAgain == 'y':
         player = False
         computer = plays[randint(0,2)]
+    else:
+        print("Game Over")
